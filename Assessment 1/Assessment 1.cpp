@@ -1,34 +1,39 @@
 #include <iostream>
-#include <sstream>
-#include <vector>
+#include "task1.h"
+#include "task2.h"
+#include "task3.h"
+#include "task4.h"
+#include "task5.h"
 using namespace std;
 
 int main()
 {
-    string userInput;
-    vector<string> unconvertedArray;
-    vector<int> convertedArray;
-    float averageNum = 0;
-    
-    cout << "Input numbers seperated by a comma: ";
+    int task = 1;
 
-    cin >> userInput;
+    while (task > 0) {
+        cout << "Which task (1-5) would you like to view? (0 to exit): ";
 
-    stringstream numbersStr{ userInput };
+        cin >> task;
 
-    for (string part{}; getline(numbersStr, part, ','); unconvertedArray.push_back(part));
-
-    for (int i = 0; i < unconvertedArray.size(); i++) {
-        convertedArray.push_back(stoi(unconvertedArray[i]));
+        switch (task) {
+        case 1:
+            task1();
+            break;
+        case 2:
+            task2();
+            break;
+        case 3:
+            task3();
+            break;
+        case 4:
+            task4();
+            break;
+        case 5:
+            task5();
+            break;
+        default:
+            return 0;
+        }
     }
-
-    for (int i = 0; i < convertedArray.size(); i++) {
-        averageNum = averageNum + convertedArray[i];
-    }
-    
-    averageNum = averageNum / convertedArray.size();
-
-    cout << "The average is: " << averageNum;
-
     return 0;
 }
