@@ -16,12 +16,12 @@ void task2() {
 	cin >> num2;
 
 	//compares the two values and outputs the greater number first
-	if (num1 > num2) {
+	if (num1 == num2) {
+		cout << "The numbers are equal" << endl << endl;
+	}
+	else if (num1 > num2) {
 		cout << num1 << " is greater than " << num2 << endl << endl;
 	}
-	else if (num1 == num2) {
-		cout << "The numbers are equal" << endl << endl;
-	} 
 	else {
 		cout << num2 << " is greater than " << num1 << endl << endl;
 	}
