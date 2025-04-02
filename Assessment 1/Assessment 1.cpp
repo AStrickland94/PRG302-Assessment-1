@@ -16,6 +16,8 @@ int main()
         cin >> task;
 
         switch (task) {
+        case 0:
+            return 0;
         case 1:
             task1();
             break;
@@ -32,7 +34,8 @@ int main()
             task5();
             break;
         default:
-            return 0;
+            cout << "Unknown task" << endl;
+            break;
         }
     }
     return 0;
